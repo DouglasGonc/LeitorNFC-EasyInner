@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Relatório de Migração
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          Relatório de Migração - </h1><div id="content"><h2 _locID="OverviewTitle">Visão geral</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">Projeto</th><th _locID="PathTableHeader">Caminho</th><th _locID="ErrorsTableHeader">Erros</th><th _locID="WarningsTableHeader">Avisos</th><th _locID="MessagesTableHeader">Mensagens</th></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#C:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csproj">..\Old\Lab EasyInner.csproj</a></strong></td><td>Lab EasyInner.csproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#C:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csprojWarning">1</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">Solução</span></a></strong></td><td>Lab EasyInner.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Lab EasyInner">Lab EasyInner</a></strong></td><td>Lab EasyInner.csproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Lab EasyInner'); return false;">64</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">Solução e projetos</h2><div id="messages"><a name="C:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csproj" /><h3>..\Old\Lab EasyInner.csproj</h3><table><tr id="C:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csprojHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Mensagem</th></tr><tr name="WarningRowClassC:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csproj"><td class="IconWarningEncoded"><a name="C:-Meus Arquivos-Nova pasta-Old-Lab EasyInner.csprojWarning" /></td><td class="messageCell"><strong>Lab EasyInner.csproj:
+        </strong><span>Não há mais suporte para o formato do projeto. A funcionalidade para converter este projeto em um formato com suporte será removida na próxima versão do Visual Studio. Recomendamos que você armazene a versão atualizada e pare de usar a versão original sem suporte. Mais informações: https://aka.ms/DeprecatedProjectConversion</span></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">Solução</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Mensagem</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>Lab EasyInner.sln:
+        </strong><span>O Visual Studio precisa fazer alterações não funcionais a este projeto para permitir que ele seja aberto em versões liberadas do Visual Studio mais novas que o Visual Studio 2010 SP1 sem impactar o comportamento do projeto.</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Mostrar 2 mensagens adicionais
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>Lab EasyInner.sln:
+        </strong><span>Arquivo armazenado em backup com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Lab EasyInner.sln</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>Lab EasyInner.sln:
+        </strong><span>Solução migrada com êxito</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Ocultar 2 mensagens adicionais
+        </a></td></tr></table><a name="Lab EasyInner" /><h3>Lab EasyInner</h3><table><tr id="Lab EasyInnerHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Mensagem</th></tr><tr name="MessageRowHeaderShowLab EasyInner"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="Lab EasyInnerMessage" onclick="ToggleMessageVisibility('Lab EasyInner'); return false;">
+          Mostrar 64 mensagens adicionais
+        </a></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Lab EasyInner.csproj:
+        </strong><span>O backup do arquivo de projeto foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Lab EasyInner.csproj</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Lab EasyInner.csproj.user:
+        </strong><span>O backup do arquivo de projeto do usuário foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Lab EasyInner.csproj.user</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>COM\EasyInner.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\COM\EasyInner.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>COM\Nitgen.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\COM\Nitgen.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Controle\LCControle.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Controle\LCControle.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>DAO\DAOConexao.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\DAO\DAOConexao.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>DAO\DAOUsuarios.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\DAO\DAOUsuarios.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>DAO\DAOUsuariosBio.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\DAO\DAOUsuariosBio.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\ASO15_DEF.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\ASO15_DEF.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Bilhete.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Bilhete.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Enumeradores.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Enumeradores.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Horarios.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Horarios.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Inner.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Inner.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Controle\NitgenController.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Controle\NitgenController.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\OnUpdateDisplay.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\OnUpdateDisplay.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\UpdatePropriedadeTelaBio.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\UpdatePropriedadeTelaBio.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\UsuarioBio.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\UsuarioBio.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Usuarios.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Usuarios.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\UsuarioSemDigital.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\UsuarioSemDigital.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Entity\Utils.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Entity\Utils.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\FrmBIO.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\FrmBIO.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\FrmBIO.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\FrmBIO.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\frmBio6xx.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\frmBio6xx.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\frmBio6xx.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\frmBio6xx.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\FrmBioController6xx.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\FrmBioController6xx.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmMain\FrmMain.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmMain\FrmMain.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmMain\FrmMain.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmMain\FrmMain.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Program.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Program.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Properties\AssemblyInfo.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Properties\AssemblyInfo.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Properties\Resources.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Properties\Resources.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Properties\Settings.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Properties\Settings.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\FrmBIOController.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\FrmBIOController.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOffLine\FrmOffLine.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOffLine\FrmOffLine.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOffLine\FrmOffLine.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOffLine\FrmOffLine.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOffLine\FrmOffLineController.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOffLine\FrmOffLineController.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOnline\FrmOnline.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOnline\FrmOnline.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOnline\FrmOnline.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOnline\FrmOnline.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOnline\FrmOnlineController.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOnline\FrmOnlineController.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmSobre\FrmSobre.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmSobre\FrmSobre.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmSobre\FrmSobre.Designer.cs:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmSobre\FrmSobre.Designer.cs</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Properties\Settings.settings:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Properties\Settings.settings</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Codigo.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Codigo.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Inner.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Inner.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Inner1.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Inner1.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Codigo1.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Codigo1.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\InnerPlus.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\InnerPlus.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\pro_bio_losango.gif:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\pro_bio_losango.gif</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\nenhum.PNG:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\nenhum.PNG</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Esquerda-invertidaa.JPG:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Esquerda-invertidaa.JPG</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\Direita-normall.JPG:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\Direita-normall.JPG</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\TopDataLogo.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\TopDataLogo.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Resources\InnerBio.bmp:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Resources\InnerBio.bmp</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>COM\Interop.NBioBSPCOMLib.dll:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\COM\Interop.NBioBSPCOMLib.dll</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>COM\NBioBSPCOM.dll:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\COM\NBioBSPCOM.dll</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>COM\NITGEN.SDK.NBioBSP.dll:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\COM\NITGEN.SDK.NBioBSP.dll</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\FrmBIO.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\FrmBIO.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmBIO\frmBio6xx.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmBIO\frmBio6xx.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmMain\FrmMain.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmMain\FrmMain.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Properties\Resources.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\Properties\Resources.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOffLine\FrmOffLine.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOffLine\FrmOffLine.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmOnline\FrmOnline.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmOnline\FrmOnline.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>UI\FrmSobre\FrmSobre.resx:
+        </strong><span>O backup do arquivo foi concluído com êxito como C:\Meus Arquivos\Nova pasta\Old\Backup\UI\FrmSobre\FrmSobre.resx</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Lab EasyInner.csproj:
+        </strong><span>Projeto migrado com êxito</span></td></tr><tr name="MessageRowClassLab EasyInner" style="display: none"><td class="IconInfoEncoded"><a name="Lab EasyInnerMessage" /></td><td class="messageCell"><strong>Lab EasyInner.csproj:
+        </strong><span>Verificação concluída: a migração não é necessária para arquivos de projeto.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideLab EasyInner"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="Lab EasyInnerMessage" onclick="ToggleMessageVisibility('Lab EasyInner'); return false;">
+          Ocultar 64 mensagens adicionais
+        </a></td></tr></table></div></div></body></html>
