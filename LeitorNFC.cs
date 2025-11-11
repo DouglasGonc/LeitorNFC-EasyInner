@@ -22,5 +22,20 @@ namespace LeitorNFC_EasyInner
         {
 
         }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnParar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

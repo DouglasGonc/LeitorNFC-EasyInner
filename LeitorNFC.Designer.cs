@@ -145,6 +145,7 @@
             this.btnIniciar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnIniciar.UseAccentColor = false;
             this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btnParar
             // 
@@ -165,6 +166,7 @@
             this.btnParar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnParar.UseAccentColor = false;
             this.btnParar.UseVisualStyleBackColor = true;
+            this.btnParar.Click += new System.EventHandler(this.btnParar_Click);
             // 
             // btnLimpar
             // 
@@ -185,6 +187,7 @@
             this.btnLimpar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnLimpar.UseAccentColor = false;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // dgvLeituras
             // 
