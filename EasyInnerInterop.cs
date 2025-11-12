@@ -9,28 +9,28 @@ namespace LeitorNFC_EasyInner.Interop
         private const string EasyInnerDll = "EasyInner.dll";
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int DefinirTipoConexao(int tipo);
+        public static extern byte DefinirTipoConexao(byte tipo);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern System.IntPtr AbrirPortaComunicacao(int porta);
+        public static extern byte AbrirPortaComunicacao(int porta);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
         public static extern void FecharPortaComunicacao();
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern System.IntPtr ConfigurarInnerOnLine();
+        public static extern byte ConfigurarInnerOnLine();
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int ConfigurarTipoLeitor(int tipoLeitor);
+        public static extern byte ConfigurarTipoLeitor(byte tipoLeitor);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int DefinirQuantidadeDigitosCartao(int quantidade);
+        public static extern byte DefinirQuantidadeDigitosCartao(byte quantidade);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int PingOnLine(int inner);
+        public static extern byte PingOnLine(int inner);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi)]
-        public static extern int ReceberDadosOnLine(
+        public static extern byte ReceberDadosOnLine(
             int inner,
             ref byte origem,
             ref byte complemento,
@@ -43,25 +43,25 @@ namespace LeitorNFC_EasyInner.Interop
             ref byte segundo);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int EnviarFormasEntradasOnLine(
+        public static extern byte EnviarFormasEntradasOnLine(
             int inner,
-            int habilitaEntrada,
-            int habilitaSaida,
-            int tipoTeclado,
-            int tempoTeclado,
-            int habilitaMudanca);
+            byte habilitaEntrada,
+            byte habilitaSaida,
+            byte tipoTeclado,
+            byte tempoTeclado,
+            byte habilitaMudanca);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int LigarLedVerde(int inner);
+        public static extern byte LigarLedVerde(int inner);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int DesligarLedVerde(int inner);
+        public static extern byte DesligarLedVerde(int inner);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern int AcionarBipCurto(int inner);
+        public static extern byte AcionarBipCurto(int inner);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern System.IntPtr DefinirPadraoCartao(int padrao);
+        public static extern byte DefinirPadraoCartao(byte padrao);
 
     }
 }
