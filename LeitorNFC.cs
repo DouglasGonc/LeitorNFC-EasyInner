@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using LeitorNFC_EasyInner.Interop;
 
@@ -31,7 +32,7 @@ namespace LeitorNFC_EasyInner
 
         private readonly List<int> _leitoresAcesso;
         private readonly BindingList<LeituraGrid> _leituras;
-        private readonly Timer _timerLeitura;
+        private readonly System.Windows.Forms.Timer _timerLeitura;
         private readonly StringBuilder _bufferCartao;
 
         public LeitorNFC()
@@ -41,7 +42,7 @@ namespace LeitorNFC_EasyInner
 
             _leitoresAcesso = new List<int>();
             _leituras = new BindingList<LeituraGrid>();
-            _timerLeitura = new Timer { Interval = 75 };
+            _timerLeitura = new System.Windows.Forms.Timer { Interval = 75 };
             _timerLeitura.Tick += TimerLeituraTick;
             _bufferCartao = new StringBuilder(32);
 
@@ -190,8 +191,8 @@ namespace LeitorNFC_EasyInner
                     return;
                 }
 
-                retorno = EasyInnerInterop.AbrirPortaComunicacao(porta);
-                if (!ValidarRetorno("AbrirPortaComunicacao(" + porta + ")", retorno))
+                IntPtr portaHandle = EasyInnerInterop.AbrirPortaComunicacao(porta);
+                if (!ValidarHandle("AbrirPortaComunicacao(" + porta + ")", portaHandle))
                 {
                     return;
                 }
@@ -200,8 +201,8 @@ namespace LeitorNFC_EasyInner
                 _portaAberta = true;
                 _portaAtual = porta;
 
-                retorno = EasyInnerInterop.ConfigurarInnerOnLine();
-                if (!ValidarRetorno("ConfigurarInnerOnLine", retorno))
+                IntPtr modoOnlineHandle = EasyInnerInterop.ConfigurarInnerOnLine();
+                if (!ValidarHandle("ConfigurarInnerOnLine", modoOnlineHandle))
                 {
                     FecharPortaInterno();
                     return;
@@ -214,8 +215,8 @@ namespace LeitorNFC_EasyInner
                     return;
                 }
 
-                retorno = EasyInnerInterop.DefinirPadraoCartao(PadraoCartaoLivre);
-                if (!ValidarRetorno("DefinirPadraoCartao(" + PadraoCartaoLivre + ")", retorno))
+                IntPtr padraoCartaoHandle = EasyInnerInterop.DefinirPadraoCartao(PadraoCartaoLivre);
+                if (!ValidarHandle("DefinirPadraoCartao(" + PadraoCartaoLivre + ")", padraoCartaoHandle))
                 {
                     FecharPortaInterno();
                     return;
@@ -228,10 +229,22 @@ namespace LeitorNFC_EasyInner
                     return;
                 }
 
-                retorno = EasyInnerInterop.TestarConexaoInner(numeroInner);
-                if (!ValidarRetorno("TestarConexaoInner(" + numeroInner + ")", retorno))
+                retorno = EasyInnerInterop.EnviarFormasEntradasOnLine(
+                    numeroInner,
+                    HabilitacaoEntradaPadrao,
+                    HabilitacaoSaidaPadrao,
+                    TipoTecladoPadrao,
+                    TempoTecladoPadrao,
+                    HabilitaMudancaOnline);
+                if (!ValidarRetorno("EnviarFormasEntradasOnLine inicial", retorno))
                 {
-                    LogErro("O Inner não respondeu ao teste de conexão. Verifique cabeamento, alimentação e IP configurado.");
+                    FecharPortaInterno();
+                    return;
+                }
+
+                if (!AguardarPingDoInner(numeroInner))
+                {
+                    LogErro("O Inner não respondeu ao Ping após múltiplas tentativas. Verifique cabeamento, alimentação e IP configurado.");
                     FecharPortaInterno();
                     return;
                 }
@@ -415,6 +428,25 @@ namespace LeitorNFC_EasyInner
             return resultado;
         }
 
+        private bool AguardarPingDoInner(int numeroInner)
+        {
+            const int tentativasMaximas = 20;
+            for (int tentativa = 1; tentativa <= tentativasMaximas; tentativa++)
+            {
+                int retornoPing = EasyInnerInterop.PingOnLine(numeroInner);
+                if (retornoPing == RetornoOk)
+                {
+                    LogInfo("PingOnLine(" + numeroInner + ") OK na tentativa " + tentativa + ".");
+                    return true;
+                }
+
+                LogInfo("PingOnLine(" + numeroInner + ") tentativa " + tentativa + " retornou " + retornoPing + ".");
+                Thread.Sleep(150);
+            }
+
+            return false;
+        }
+
         private void FecharPortaInterno()
         {
             PararLeitura(true);
@@ -472,11 +504,23 @@ namespace LeitorNFC_EasyInner
         {
             if (retorno == RetornoOk)
             {
-                LogInfo(operacao + " retornou 0 (sucesso).");
+                LogInfo(operacao + " retornou 0");
                 return true;
             }
 
             LogErro(operacao + " retornou " + retorno + ".");
+            return false;
+        }
+
+        private bool ValidarHandle(string operacao, IntPtr handle)
+        {
+            if (handle != IntPtr.Zero)
+            {
+                LogInfo(operacao + " OK");
+                return true;
+            }
+
+            LogErro(operacao + " retornou handle nulo.");
             return false;
         }
 

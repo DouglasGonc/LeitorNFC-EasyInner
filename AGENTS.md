@@ -27,8 +27,6 @@ O formulário principal (WinForms com MaterialSkin) executa três funções bás
 | Log            | logRichTextBox   | `logRichControle`| Verificação de Logs       |
 | informativo    | Label            | `rtbLog`         | Registro textual          |
 | Leituras       | DataGridView     | `dgvLeituras`    | Exibição de cartões lidos |
-Campo de IP (`txtIpLeitor`) **é apenas informativo** e **não é usado** pela SDK.  
-O Inner deve estar configurado via Web Server para conectar-se ao IP da máquina que roda este programa, porta 3570.
 
 ## Configurações fixas
 
