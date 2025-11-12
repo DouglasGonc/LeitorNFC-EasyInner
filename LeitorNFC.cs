@@ -14,6 +14,7 @@ namespace LeitorNFC_EasyInner
         private const int RetornoOk = 0;
         private const int TipoConexaoTcpIpPortaFixa = 2;
         private const int TipoLeitorProximidadeAbatrack2 = 2;
+        private const int PadraoCartaoLivre = 1;
         private const int QuantidadeDigitosCartao = 14;
         private const int HabilitacaoEntradaPadrao = 0;
         private const int HabilitacaoSaidaPadrao = 0;
@@ -189,26 +190,22 @@ namespace LeitorNFC_EasyInner
                     return;
                 }
 
-                // >>> AQUI MUDA: AbrirPortaComunicacao devolve HANDLE, não status.
-                IntPtr handle = EasyInnerInterop.AbrirPortaComunicacao(porta);
-                if (handle == IntPtr.Zero)
+                retorno = EasyInnerInterop.AbrirPortaComunicacao(porta);
+                if (!ValidarRetorno("AbrirPortaComunicacao(" + porta + ")", retorno))
                 {
-                    LogErro("AbrirPortaComunicacao(" + porta + ") falhou (handle nulo).");
                     return;
                 }
-                LogInfo("AbrirPortaComunicacao(" + porta + ") OK. Handle=" + handle);
+                LogInfo("Porta " + porta + " aberta. Aguardando resposta do Inner...");
 
                 _portaAberta = true;
                 _portaAtual = porta;
 
-                IntPtr retPtr = EasyInnerInterop.ConfigurarInnerOnLine();
-                if (retPtr == IntPtr.Zero)
+                retorno = EasyInnerInterop.ConfigurarInnerOnLine();
+                if (!ValidarRetorno("ConfigurarInnerOnLine", retorno))
                 {
-                    LogErro("ConfigurarInnerOnLine retornou handle nulo (falha).");
                     FecharPortaInterno();
                     return;
                 }
-                LogInfo("ConfigurarInnerOnLine OK. Handle=" + retPtr);
 
                 retorno = EasyInnerInterop.ConfigurarTipoLeitor(TipoLeitorProximidadeAbatrack2);
                 if (!ValidarRetorno("ConfigurarTipoLeitor(2)", retorno))
@@ -217,18 +214,24 @@ namespace LeitorNFC_EasyInner
                     return;
                 }
 
-                IntPtr retPadrao = EasyInnerInterop.DefinirPadraoCartao(1);
-                if (retPadrao == IntPtr.Zero)
+                retorno = EasyInnerInterop.DefinirPadraoCartao(PadraoCartaoLivre);
+                if (!ValidarRetorno("DefinirPadraoCartao(" + PadraoCartaoLivre + ")", retorno))
                 {
-                    LogErro("DefinirPadraoCartao(1) falhou (handle nulo).");
                     FecharPortaInterno();
                     return;
                 }
-                LogInfo("DefinirPadraoCartao(1) OK. Handle=" + retPadrao);
 
                 retorno = EasyInnerInterop.DefinirQuantidadeDigitosCartao(QuantidadeDigitosCartao);
-                if (!ValidarRetorno("DefinirQuantidadeDigitosCartao(14)", retorno))
+                if (!ValidarRetorno("DefinirQuantidadeDigitosCartao(" + QuantidadeDigitosCartao + ")", retorno))
                 {
+                    FecharPortaInterno();
+                    return;
+                }
+
+                retorno = EasyInnerInterop.TestarConexaoInner(numeroInner);
+                if (!ValidarRetorno("TestarConexaoInner(" + numeroInner + ")", retorno))
+                {
+                    LogErro("O Inner não respondeu ao teste de conexão. Verifique cabeamento, alimentação e IP configurado.");
                     FecharPortaInterno();
                     return;
                 }

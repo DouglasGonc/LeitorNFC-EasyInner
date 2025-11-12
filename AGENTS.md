@@ -15,14 +15,6 @@ Ambiente e versões
 
 O formulário principal (WinForms com MaterialSkin) executa três funções básicas:
 
-1. **Abrir comunicação TCP/IP fixa (porta 3570)**
-    - `DefinirTipoConexao(2)`
-    - `AbrirPortaComunicacao(porta)`
-2. **Testar comunicação com o Inner**
-    - `TestarConexaoInner(numeroInner)`
-    - Exibir retorno no log visual e console.
-3. **Capturar leituras online** (fase 2, posterior)
-    - `ReceberDadosOnLine` → popular `DataGridView`.
 
 | Elemento       | Tipo             | Nome             | Observação                |
 | -------------- | ---------------- | ---------------- | ------------------------- |
@@ -32,7 +24,7 @@ O formulário principal (WinForms com MaterialSkin) executa três funções bás
 | Botão Iniciar  | MaterialButton   | `btnIniciar`     | Iniciará leitura online   |
 | Botão Parar    | MaterialButton   | `btnParar`       | Interrompe leitura        |
 | Botão Limpar   | MaterialButton   | `btnLimpar`      | Limpa logs                |
-| Log            | logRichTextBox   | logRichControle  | Verificação de Logs       |
+| Log            | logRichTextBox   | `logRichControle`| Verificação de Logs       |
 | informativo    | Label            | `rtbLog`         | Registro textual          |
 | Leituras       | DataGridView     | `dgvLeituras`    | Exibição de cartões lidos |
 Campo de IP (`txtIpLeitor`) **é apenas informativo** e **não é usado** pela SDK.  
@@ -40,16 +32,7 @@ O Inner deve estar configurado via Web Server para conectar-se ao IP da máquina
 
 ## Configurações fixas
 
-Todos os parâmetros de configuração são **pré-definidos no código**, não editáveis em tela:
-
-``` csharp
-EasyInner.DefinirTipoConexao(2); // TCP/IP porta fixa
-EasyInner.DefinirPadraoCartao((byte)Enumeradores.PadraoCartao.PADRAO_LIVRE);
-EasyInner.DefinirQuantidadeDigitosCartao(14);
-EasyInner.DefinirTipoLeitor((byte)Enumeradores.TipoLeitor.PROXIMIDADE_ABATRACK2);
-EasyInner.DefinirTipoEquipamento((byte)Enumeradores.TipoEquipamento.COLETOR);
-
-```
+Todos os parâmetros de configuração são **pré-definidos no código**, não editáveis em tela: pegar mesmos do exemplo
 
 Não há botões **Incluir na Lista** ou **Remover da Lista**.  
 O objetivo é testar operação **online** pura.

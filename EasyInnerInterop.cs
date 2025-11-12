@@ -12,13 +12,13 @@ namespace LeitorNFC_EasyInner.Interop
         public static extern int DefinirTipoConexao(int tipo);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern IntPtr AbrirPortaComunicacao(int porta);
+        public static extern int AbrirPortaComunicacao(int porta);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
         public static extern void FecharPortaComunicacao();
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern IntPtr ConfigurarInnerOnLine();
+        public static extern int ConfigurarInnerOnLine();
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
         public static extern int ConfigurarTipoLeitor(int tipoLeitor);
@@ -61,6 +61,9 @@ namespace LeitorNFC_EasyInner.Interop
         public static extern int AcionarBipCurto(int inner);
 
         [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
-        public static extern IntPtr DefinirPadraoCartao(int padrao);
+        public static extern int DefinirPadraoCartao(int padrao);
+
+        [DllImport(EasyInnerDll, CallingConvention = CallingConvention.Winapi)]
+        public static extern int TestarConexaoInner(int inner);
     }
 }
