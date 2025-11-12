@@ -31,7 +31,6 @@
             this.rtbLog = new System.Windows.Forms.Label();
             this.btnConectar = new MaterialSkin.Controls.MaterialButton();
             this.txtPorta = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtIpLeitor = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnIniciar = new MaterialSkin.Controls.MaterialButton();
             this.btnParar = new MaterialSkin.Controls.MaterialButton();
@@ -39,7 +38,6 @@
             this.dgvLeituras = new System.Windows.Forms.DataGridView();
             this.txtNumeroInner = new MaterialSkin.Controls.MaterialTextBox();
             this.lblPortaNFC1 = new MaterialSkin.Controls.MaterialLabel();
-            this.lblEnderecoIpNFC1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.logRichControle = new gao_controle_entrega_material.LogRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeituras)).BeginInit();
@@ -85,34 +83,15 @@
             this.txtPorta.Depth = 0;
             this.txtPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPorta.LeadingIcon = null;
-            this.txtPorta.Location = new System.Drawing.Point(381, 148);
+            this.txtPorta.Location = new System.Drawing.Point(249, 148);
             this.txtPorta.MaxLength = 50;
             this.txtPorta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPorta.Multiline = false;
             this.txtPorta.Name = "txtPorta";
-            this.txtPorta.Size = new System.Drawing.Size(100, 50);
+            this.txtPorta.Size = new System.Drawing.Size(232, 50);
             this.txtPorta.TabIndex = 53;
             this.txtPorta.Text = "3570";
             this.txtPorta.TrailingIcon = null;
-            // 
-            // txtIpLeitor
-            // 
-            this.txtIpLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIpLeitor.AnimateReadOnly = false;
-            this.txtIpLeitor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIpLeitor.Depth = 0;
-            this.txtIpLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtIpLeitor.LeadingIcon = null;
-            this.txtIpLeitor.Location = new System.Drawing.Point(18, 148);
-            this.txtIpLeitor.MaxLength = 50;
-            this.txtIpLeitor.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtIpLeitor.Multiline = false;
-            this.txtIpLeitor.Name = "txtIpLeitor";
-            this.txtIpLeitor.Size = new System.Drawing.Size(251, 50);
-            this.txtIpLeitor.TabIndex = 52;
-            this.txtIpLeitor.Text = "192.168.6.231";
-            this.txtIpLeitor.TrailingIcon = null;
             // 
             // materialLabel2
             // 
@@ -199,18 +178,19 @@
             // 
             // txtNumeroInner
             // 
-            this.txtNumeroInner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumeroInner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumeroInner.AnimateReadOnly = false;
             this.txtNumeroInner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumeroInner.Depth = 0;
             this.txtNumeroInner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtNumeroInner.LeadingIcon = null;
-            this.txtNumeroInner.Location = new System.Drawing.Point(275, 148);
+            this.txtNumeroInner.Location = new System.Drawing.Point(18, 148);
             this.txtNumeroInner.MaxLength = 50;
             this.txtNumeroInner.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNumeroInner.Multiline = false;
             this.txtNumeroInner.Name = "txtNumeroInner";
-            this.txtNumeroInner.Size = new System.Drawing.Size(100, 50);
+            this.txtNumeroInner.Size = new System.Drawing.Size(225, 50);
             this.txtNumeroInner.TabIndex = 62;
             this.txtNumeroInner.Text = "1";
             this.txtNumeroInner.TrailingIcon = null;
@@ -222,25 +202,12 @@
             this.lblPortaNFC1.Depth = 0;
             this.lblPortaNFC1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblPortaNFC1.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.lblPortaNFC1.Location = new System.Drawing.Point(380, 119);
+            this.lblPortaNFC1.Location = new System.Drawing.Point(251, 119);
             this.lblPortaNFC1.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblPortaNFC1.Name = "lblPortaNFC1";
             this.lblPortaNFC1.Size = new System.Drawing.Size(31, 17);
             this.lblPortaNFC1.TabIndex = 64;
             this.lblPortaNFC1.Text = "Port:";
-            // 
-            // lblEnderecoIpNFC1
-            // 
-            this.lblEnderecoIpNFC1.AutoSize = true;
-            this.lblEnderecoIpNFC1.Depth = 0;
-            this.lblEnderecoIpNFC1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblEnderecoIpNFC1.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.lblEnderecoIpNFC1.Location = new System.Drawing.Point(15, 119);
-            this.lblEnderecoIpNFC1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblEnderecoIpNFC1.Name = "lblEnderecoIpNFC1";
-            this.lblEnderecoIpNFC1.Size = new System.Drawing.Size(131, 17);
-            this.lblEnderecoIpNFC1.TabIndex = 63;
-            this.lblEnderecoIpNFC1.Text = "Endereço IP do leitor:";
             // 
             // materialLabel1
             // 
@@ -249,7 +216,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel1.Location = new System.Drawing.Point(274, 119);
+            this.materialLabel1.Location = new System.Drawing.Point(17, 119);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(73, 17);
@@ -274,7 +241,6 @@
             this.ClientSize = new System.Drawing.Size(500, 600);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblPortaNFC1);
-            this.Controls.Add(this.lblEnderecoIpNFC1);
             this.Controls.Add(this.txtNumeroInner);
             this.Controls.Add(this.logRichControle);
             this.Controls.Add(this.dgvLeituras);
@@ -285,7 +251,6 @@
             this.Controls.Add(this.rtbLog);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.txtPorta);
-            this.Controls.Add(this.txtIpLeitor);
             this.Name = "LeitorNFC";
             this.Padding = new System.Windows.Forms.Padding(15, 64, 15, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -301,7 +266,6 @@
         private System.Windows.Forms.Label rtbLog;
         private MaterialSkin.Controls.MaterialButton btnConectar;
         private MaterialSkin.Controls.MaterialTextBox txtPorta;
-        private MaterialSkin.Controls.MaterialTextBox txtIpLeitor;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton btnIniciar;
         private MaterialSkin.Controls.MaterialButton btnParar;
@@ -310,7 +274,6 @@
         private gao_controle_entrega_material.LogRichTextBox logRichControle;
         private MaterialSkin.Controls.MaterialTextBox txtNumeroInner;
         private MaterialSkin.Controls.MaterialLabel lblPortaNFC1;
-        private MaterialSkin.Controls.MaterialLabel lblEnderecoIpNFC1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
