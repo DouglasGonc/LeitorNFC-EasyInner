@@ -1,3 +1,4 @@
+using EasyInnerSDK;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,6 @@ using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using LeitorNFC_EasyInner.Interop;
 
 namespace LeitorNFC_EasyInner
 {
@@ -133,15 +133,15 @@ namespace LeitorNFC_EasyInner
 
             // habilita leitor/proximidade e timeouts antes da 1ª leitura
             int inner = _leitoresAcesso[0];
-            int ret = EasyInnerInterop.EnviarFormasEntradasOnLine(
-                inner,
+            byte ret = EasyInnerInterop.EnviarFormasEntradasOnLine(
+                (byte)inner,
                 HabilitacaoEntradaPadrao,   // 0
                 HabilitacaoSaidaPadrao,     // 0
                 TipoTecladoPadrao,          // 2 (proximidade)
                 TempoTecladoPadrao,         // 10 (1s)
                 HabilitaMudancaOnline       // 1
             );
-            if (ret != 0)
+            if (ret != RetornoOk)
             {
                 LogErro("EnviarFormasEntradasOnLine inicial retornou " + ret + ".");
             }
@@ -225,26 +225,6 @@ namespace LeitorNFC_EasyInner
                 retorno = EasyInnerInterop.DefinirQuantidadeDigitosCartao(QuantidadeDigitosCartao);
                 if (!ValidarRetorno("DefinirQuantidadeDigitosCartao(" + QuantidadeDigitosCartao + ")", retorno))
                 {
-                    FecharPortaInterno();
-                    return;
-                }
-
-                retorno = EasyInnerInterop.EnviarFormasEntradasOnLine(
-                    numeroInner,
-                    HabilitacaoEntradaPadrao,
-                    HabilitacaoSaidaPadrao,
-                    TipoTecladoPadrao,
-                    TempoTecladoPadrao,
-                    HabilitaMudancaOnline);
-                if (!ValidarRetorno("EnviarFormasEntradasOnLine inicial", retorno))
-                {
-                    FecharPortaInterno();
-                    return;
-                }
-
-                if (!AguardarPingDoInner(numeroInner))
-                {
-                    LogErro("O Inner não respondeu ao Ping após múltiplas tentativas. Verifique cabeamento, alimentação e IP configurado.");
                     FecharPortaInterno();
                     return;
                 }
@@ -338,7 +318,7 @@ namespace LeitorNFC_EasyInner
                         EasyInnerInterop.AcionarBipCurto(inner);
                         EasyInnerInterop.DesligarLedVerde(inner);
                         EasyInnerInterop.EnviarFormasEntradasOnLine(
-                            inner,
+                            (byte)inner,
                             HabilitacaoEntradaPadrao,
                             HabilitacaoSaidaPadrao,
                             TipoTecladoPadrao,
@@ -509,6 +489,18 @@ namespace LeitorNFC_EasyInner
             }
 
             LogErro(operacao + " retornou " + retorno + ".");
+            return false;
+        }
+
+        private bool ValidarHandle(string operacao, IntPtr handle)
+        {
+            if (handle != IntPtr.Zero)
+            {
+                LogInfo(operacao + " retornou handle " + handle + ".");
+                return true;
+            }
+
+            LogErro(operacao + " retornou handle nulo.");
             return false;
         }
 
